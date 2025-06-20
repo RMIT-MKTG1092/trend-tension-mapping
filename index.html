@@ -79,21 +79,64 @@
         </tr>
       </thead>
       <tbody>
+        
+<tr>
+  <td><textarea name="trend0" placeholder="e.g. Refill culture in household products" style="color: grey;" onfocus="clearPrompt(this)"></textarea></td>
+  <td><textarea name="tension0" placeholder="e.g. Sustainability vs. refill messiness" style="color: grey;" onfocus="clearPrompt(this)"></textarea></td>
+  <td><textarea name="prompt0" placeholder="e.g. Compact cartridge-based refill system" style="color: grey;" onfocus="clearPrompt(this)"></textarea></td>
+  <td><textarea name="notes0" placeholder="e.g. Links to convenience and eco design" style="color: grey;" onfocus="clearPrompt(this)"></textarea></td>
+  <td><textarea name="source0" placeholder="e.g. Deloitte (2025) Consumer Outlook" style="color: grey;" onfocus="clearPrompt(this)"></textarea></td>
+</tr>
+
         <tr>
-          <td><textarea name="trend0" placeholder="e.g. Refill culture in household products" onfocus="clearPrompt(this)">e.g. Refill culture in household products</textarea></td>
-          <td><textarea name="tension0" placeholder="e.g. Sustainability vs. refill messiness" onfocus="clearPrompt(this)">e.g. Sustainability vs. refill messiness</textarea></td>
-          <td><textarea name="prompt0" placeholder="e.g. Compact cartridge-based refill system" onfocus="clearPrompt(this)">e.g. Compact cartridge-based refill system</textarea></td>
-          <td><textarea name="notes0" placeholder="e.g. Links to convenience and eco design" onfocus="clearPrompt(this)">e.g. Links to convenience and eco design</textarea></td>
-          <td><textarea name="source0" placeholder="e.g. Deloitte (2025) Consumer Outlook" onfocus="clearPrompt(this)">e.g. Deloitte (2025) Consumer Outlook</textarea></td>
-        </tr>
-        ${[1,2,3,4,5].map(i => `
-        <tr>
-          <td><textarea name="trend${i}"></textarea></td>
-          <td><textarea name="tension${i}"></textarea></td>
-          <td><textarea name="prompt${i}"></textarea></td>
-          <td><textarea name="notes${i}"></textarea></td>
-          <td><textarea name="source${i}"></textarea></td>
-        </tr>`).join('')}
+      <td><textarea name="trend1"></textarea></td>
+      <td><textarea name="tension1"></textarea></td>
+      <td><textarea name="prompt1"></textarea></td>
+      <td><textarea name="notes1"></textarea></td>
+      <td><textarea name="source1"></textarea></td>
+    </tr>
+<tr>
+      <td><textarea name="trend2"></textarea></td>
+      <td><textarea name="tension2"></textarea></td>
+      <td><textarea name="prompt2"></textarea></td>
+      <td><textarea name="notes2"></textarea></td>
+      <td><textarea name="source2"></textarea></td>
+    </tr>
+<tr>
+      <td><textarea name="trend3"></textarea></td>
+      <td><textarea name="tension3"></textarea></td>
+      <td><textarea name="prompt3"></textarea></td>
+      <td><textarea name="notes3"></textarea></td>
+      <td><textarea name="source3"></textarea></td>
+    </tr>
+<tr>
+      <td><textarea name="trend4"></textarea></td>
+      <td><textarea name="tension4"></textarea></td>
+      <td><textarea name="prompt4"></textarea></td>
+      <td><textarea name="notes4"></textarea></td>
+      <td><textarea name="source4"></textarea></td>
+    </tr>
+<tr>
+      <td><textarea name="trend5"></textarea></td>
+      <td><textarea name="tension5"></textarea></td>
+      <td><textarea name="prompt5"></textarea></td>
+      <td><textarea name="notes5"></textarea></td>
+      <td><textarea name="source5"></textarea></td>
+    </tr>
+<tr>
+      <td><textarea name="trend6"></textarea></td>
+      <td><textarea name="tension6"></textarea></td>
+      <td><textarea name="prompt6"></textarea></td>
+      <td><textarea name="notes6"></textarea></td>
+      <td><textarea name="source6"></textarea></td>
+    </tr>
+<tr>
+      <td><textarea name="trend7"></textarea></td>
+      <td><textarea name="tension7"></textarea></td>
+      <td><textarea name="prompt7"></textarea></td>
+      <td><textarea name="notes7"></textarea></td>
+      <td><textarea name="source7"></textarea></td>
+    </tr>
       </tbody>
     </table>
     <button type="button" onclick="exportToWord()">Export to Word</button>
@@ -101,9 +144,9 @@
 
   <script>
     function clearPrompt(field) {
-      if (field.value.startsWith("e.g.")) {
-        field.value = "";
-        field.style.color = "black";
+      if (field.value.startsWith('e.g.')) {
+        field.value = '';
+        field.style.color = 'black';
       }
     }
 
@@ -117,9 +160,9 @@
                       <th style='border: 1px solid #ccc;'>Innovation Prompt</th>
                       <th style='border: 1px solid #ccc;'>Notes</th>
                       <th style='border: 1px solid #ccc;'>Source</th>
-                    </tr>`;
+                    </tr>`;  
 
-      for (let i = 0; i <= 5; i++) {
+      for (let i = 0; i <= 7; i++) {
         const trend = document.querySelector(`[name='trend${i}']`)?.value || '';
         const tension = document.querySelector(`[name='tension${i}']`)?.value || '';
         const prompt = document.querySelector(`[name='prompt${i}']`)?.value || '';
@@ -145,9 +188,8 @@
       const a = document.createElement('a');
       a.href = url;
       a.download = 'Trend_Tension_Mapping.doc';
-      document.body.appendChild(a);
       a.click();
-      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
     }
   </script>
 </body>

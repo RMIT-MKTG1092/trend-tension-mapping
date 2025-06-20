@@ -135,33 +135,47 @@
 
   <script>
     function exportToWord() {
-      const header = '<h2 style="font-family: Arial; font-size: 12pt;">Trend Tension Mapping Export</h2>';
-      let content = header;
-      content += `<table style='font-family: Arial; font-size: 10pt; width: 100%; border-collapse: collapse;' border='1'>
-                    <tr><th style='background-color: #f6f6f6;'>Trend Signal</th><th style='background-color: #f6f6f6;'>Tension</th><th style='background-color: #f6f6f6;'>Innovation Prompt</th><th>Notes or Source</th></tr>`;
+  const header = '<h2 style="font-family: Arial; font-size: 14pt; color: #ba372a;">Trend Tension Mapping Export</h2>';
+  let content = header;
+  content += `<table style='font-family: Arial; font-size: 10pt; width: 100%; border-collapse: collapse; border: 1px solid #999;'>
+                <tr style='background-color: #f6f6f6; font-weight: bold;'>
+                  <th style='border: 1px solid #ccc;'>Trend Signal</th>
+                  <th style='border: 1px solid #ccc;'>Tension</th>
+                  <th style='border: 1px solid #ccc;'>Innovation Prompt</th>
+                  <th style='border: 1px solid #ccc;'>Notes</th>
+                  <th style='border: 1px solid #ccc;'>Source</th>
+                </tr>`;
 
-      for (let i = 1; i <= 5; i++) {
-        const trend = document.querySelector(`[name='trend${i}']`).value;
-        const tension = document.querySelector(`[name='tension${i}']`).value;
-        const prompt = document.querySelector(`[name='prompt${i}']`).value;
-        const source = document.querySelector(`[name='source${i}']`).value;
+  for (let i = 0; i <= 5; i++) {
+    const trend = document.querySelector(`[name='trend${i}']`)?.value || '';
+    const tension = document.querySelector(`[name='tension${i}']`)?.value || '';
+    const prompt = document.querySelector(`[name='prompt${i}']`)?.value || '';
+    const notes = document.querySelector(`[name='notes${i}']`)?.value || '';
+    const source = document.querySelector(`[name='source${i}']`)?.value || '';
 
-        if (trend || tension || prompt || source) {
-          content += `<tr><td>${trend}</td><td>${tension}</td><td>${prompt}</td><td>${source}</td></tr>`;
-        }
-      }
+    if (trend || tension || prompt || notes || source) {
+      content += `<tr>
+        <td style='border: 1px solid #ccc;'>${trend}</td>
+        <td style='border: 1px solid #ccc;'>${tension}</td>
+        <td style='border: 1px solid #ccc;'>${prompt}</td>
+        <td style='border: 1px solid #ccc;'>${notes}</td>
+        <td style='border: 1px solid #ccc;'>${source}</td>
+      </tr>`;
+    }
+  }
 
-      content += '</table>';
+  content += '</table>';
 
-      const html = `<!DOCTYPE html><html><head><meta charset='utf-8'></head><body>${content}</body></html>`;
-      const blob = new Blob([html], { type: 'application/msword' });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = 'Trend_Tension_Mapping.doc';
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
+  const html = `<!DOCTYPE html><html><head><meta charset='utf-8'></head><body>${content}</body></html>`;
+  const blob = new Blob([html], { type: 'application/msword' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'Trend_Tension_Mapping.doc';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+}
     }
   
     function clearPrompt(field) {

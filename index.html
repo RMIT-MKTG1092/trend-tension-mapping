@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,7 +31,8 @@
       vertical-align: top;
     }
     th {
-      background-color: #f6f6f6;
+      background-color: #003865;
+      color: white;
       text-align: left;
     }
     textarea {
@@ -42,6 +41,7 @@
       font-family: Arial, sans-serif;
       font-size: 10pt;
       box-sizing: border-box;
+      color: black;
     }
     button {
       background-color: #ba372a;
@@ -55,136 +55,77 @@
 </head>
 <body>
   <h1>Trend Tension Mapping Worksheet</h1>
-  
-    <p><strong>Instructions:</strong> Use this worksheet to explore <em>tensions</em> between macro-environmental trends and changing consumer expectations, behaviours, or business constraints. These tensions often point to areas where innovation is most needed.</p>
-
-    <p>A <strong>tension</strong> is where two forces pull in different directions — for example, customers want sustainable packaging, but also want something convenient and mess-free.</p>
-
-    <p><strong>How to use this:</strong></p>
-    <ul>
-      <li>Start by identifying a <strong>trend</strong> that is active or emerging (e.g. refill packaging, automation, skin sensitivity)</li>
-      <li>Describe the <strong>tension</strong> or clash it creates in real life</li>
-      <li>Suggest an <strong>innovation idea</strong> that could resolve or respond to this tension</li>
-      <li>Include a <strong>source</strong> to support your trend insight</li>
-    </ul>
-    
+  <p><strong>Instructions:</strong> Use this worksheet to explore <em>tensions</em> between macro-environmental trends and changing consumer expectations, behaviours, or business constraints. These tensions often point to areas where innovation is most needed.</p>
+  <p>A <strong>tension</strong> is where two forces pull in different directions — for example, customers want sustainable packaging, but also want something convenient and mess-free.</p>
+  <p><strong>How to use this:</strong></p>
+  <ul>
+    <li>Start by identifying a <strong>trend</strong> that is active or emerging (e.g. refill packaging, automation, skin sensitivity)</li>
+    <li>Describe the <strong>tension</strong> or clash it creates in real life</li>
+    <li>Suggest an <strong>innovation idea</strong> that could resolve or respond to this tension</li>
+    <li>Include a <strong>source</strong> to support your trend insight</li>
+  </ul>
 
   <form id="tensionForm">
     <table>
       <thead>
         <tr>
-          <th style='background-color: #f6f6f6;'>Trend Signal</th>
-          <th style='background-color: #f6f6f6;'>Tension</th>
-          <th style='background-color: #f6f6f6;'>Innovation Prompt</th>
-          <th style='background-color: #f6f6f6;'>Notes</th>
-          <th style='background-color: #f6f6f6;'>Source</th>
+          <th>Trend Signal</th>
+          <th>Tension</th>
+          <th>Innovation Prompt</th>
+          <th>Notes</th>
+          <th>Source</th>
         </tr>
       </thead>
       <tbody>
-<tr>
-  <td><textarea name="trend0" placeholder="e.g. Refill culture in household products" style="color: grey;" onfocus="clearPrompt(this)"></textarea></td>
-  <td><textarea name="tension0" placeholder="e.g. Sustainability vs. refill messiness" style="color: grey;" onfocus="clearPrompt(this)"></textarea></td>
-  <td><textarea name="prompt0" placeholder="e.g. Compact cartridge-based refill system" style="color: grey;" onfocus="clearPrompt(this)"></textarea></td>
-  <td><textarea name="notes0" placeholder="e.g. Connects to ease and eco-goals" style="color: grey;" onfocus="clearPrompt(this)"></textarea></td>
-  <td><textarea name="source0" placeholder="e.g. Deloitte (2025) Consumer Outlook" style="color: grey;" onfocus="clearPrompt(this)"></textarea></td>
-</tr>
-
-
-    <tr>
-      <td><textarea name="trend1"></textarea></td>
-      <td><textarea name="tension1"></textarea></td>
-      <td><textarea name="prompt1"></textarea></td>
-      <td><textarea name="notes1"></textarea></td>
-      <td><textarea name="source1"></textarea></td>
-    </tr>
-
-    <tr>
-      <td><textarea name="trend2"></textarea></td>
-      <td><textarea name="tension2"></textarea></td>
-      <td><textarea name="prompt2"></textarea></td>
-      <td><textarea name="notes2"></textarea></td>
-      <td><textarea name="source2"></textarea></td>
-    </tr>
-
-    <tr>
-      <td><textarea name="trend3"></textarea></td>
-      <td><textarea name="tension3"></textarea></td>
-      <td><textarea name="prompt3"></textarea></td>
-      <td><textarea name="notes3"></textarea></td>
-      <td><textarea name="source3"></textarea></td>
-    </tr>
-
-    <tr>
-      <td><textarea name="trend4"></textarea></td>
-      <td><textarea name="tension4"></textarea></td>
-      <td><textarea name="prompt4"></textarea></td>
-      <td><textarea name="notes4"></textarea></td>
-      <td><textarea name="source4"></textarea></td>
-    </tr>
-
-    <tr>
-      <td><textarea name="trend5"></textarea></td>
-      <td><textarea name="tension5"></textarea></td>
-      <td><textarea name="prompt5"></textarea></td>
-      <td><textarea name="notes5"></textarea></td>
-      <td><textarea name="source5"></textarea></td>
-    </tr></tbody>
+        <tr>
+          <td><textarea name="trend0" placeholder="e.g. Refill culture in household products" onfocus="clearPrompt(this)">e.g. Refill culture in household products</textarea></td>
+          <td><textarea name="tension0" placeholder="e.g. Sustainability vs. refill messiness" onfocus="clearPrompt(this)">e.g. Sustainability vs. refill messiness</textarea></td>
+          <td><textarea name="prompt0" placeholder="e.g. Compact cartridge-based refill system" onfocus="clearPrompt(this)">e.g. Compact cartridge-based refill system</textarea></td>
+          <td><textarea name="notes0" placeholder="e.g. Links to convenience and eco design" onfocus="clearPrompt(this)">e.g. Links to convenience and eco design</textarea></td>
+          <td><textarea name="source0" placeholder="e.g. Deloitte (2025) Consumer Outlook" onfocus="clearPrompt(this)">e.g. Deloitte (2025) Consumer Outlook</textarea></td>
+        </tr>
+        ${[1,2,3,4,5].map(i => `
+        <tr>
+          <td><textarea name="trend${i}"></textarea></td>
+          <td><textarea name="tension${i}"></textarea></td>
+          <td><textarea name="prompt${i}"></textarea></td>
+          <td><textarea name="notes${i}"></textarea></td>
+          <td><textarea name="source${i}"></textarea></td>
+        </tr>`).join('')}
+      </tbody>
     </table>
     <button type="button" onclick="exportToWord()">Export to Word</button>
   </form>
 
   <script>
-    function exportToWord() {
-  const header = '<h2 style="font-family: Arial; font-size: 14pt; color: #ba372a;">Trend Tension Mapping Export</h2>';
-  let content = header;
-  content += `<table style='font-family: Arial; font-size: 10pt; width: 100%; border-collapse: collapse; border: 1px solid #999;'>
-                <tr style='background-color: #f6f6f6; font-weight: bold;'>
-                  <th style='border: 1px solid #ccc;'>Trend Signal</th>
-                  <th style='border: 1px solid #ccc;'>Tension</th>
-                  <th style='border: 1px solid #ccc;'>Innovation Prompt</th>
-                  <th style='border: 1px solid #ccc;'>Notes</th>
-                  <th style='border: 1px solid #ccc;'>Source</th>
-                </tr>`;
-
-  for (let i = 0; i <= 5; i++) {
-    const trend = document.querySelector(`[name='trend${i}']`)?.value || '';
-    const tension = document.querySelector(`[name='tension${i}']`)?.value || '';
-    const prompt = document.querySelector(`[name='prompt${i}']`)?.value || '';
-    const notes = document.querySelector(`[name='notes${i}']`)?.value || '';
-    const source = document.querySelector(`[name='source${i}']`)?.value || '';
-
-    if (trend || tension || prompt || notes || source) {
-      content += `<tr>
-        <td style='border: 1px solid #ccc;'>${trend}</td>
-        <td style='border: 1px solid #ccc;'>${tension}</td>
-        <td style='border: 1px solid #ccc;'>${prompt}</td>
-        <td style='border: 1px solid #ccc;'>${notes}</td>
-        <td style='border: 1px solid #ccc;'>${source}</td>
-      </tr>`;
-    }
-  }
-
-  content += '</table>';
-
-  const html = `<!DOCTYPE html><html><head><meta charset='utf-8'></head><body>${content}</body></html>`;
-  const blob = new Blob([html], { type: 'application/msword' });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = 'Trend_Tension_Mapping.doc';
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
-}
-    }
-  
     function clearPrompt(field) {
-      if (field.style.color === 'grey') {
-        field.value = '';
-        field.style.color = 'black';
+      if (field.value.startsWith("e.g.")) {
+        field.value = "";
+        field.style.color = "black";
       }
     }
-    </script>
-    
-</body>
-</html>
+
+    function exportToWord() {
+      const header = '<h2 style="font-family: Arial; font-size: 14pt; color: #ba372a;">Trend Tension Mapping Export</h2>';
+      let content = header;
+      content += `<table style='font-family: Arial; font-size: 10pt; width: 100%; border-collapse: collapse; border: 1px solid #999;'>
+                    <tr style='background-color: #003865; color: white; font-weight: bold;'>
+                      <th style='border: 1px solid #ccc;'>Trend Signal</th>
+                      <th style='border: 1px solid #ccc;'>Tension</th>
+                      <th style='border: 1px solid #ccc;'>Innovation Prompt</th>
+                      <th style='border: 1px solid #ccc;'>Notes</th>
+                      <th style='border: 1px solid #ccc;'>Source</th>
+                    </tr>`;
+
+      for (let i = 0; i <= 5; i++) {
+        const trend = document.querySelector(`[name='trend${i}']`)?.value || '';
+        const tension = document.querySelector(`[name='tension${i}']`)?.value || '';
+        const prompt = document.querySelector(`[name='prompt${i}']`)?.value || '';
+        const notes = document.querySelector(`[name='notes${i}']`)?.value || '';
+        const source = document.querySelector(`[name='source${i}']`)?.value || '';
+
+        if (trend || tension || prompt || notes || source) {
+          content += `<tr>
+            <td style='border: 1px solid #ccc;'>${trend}</td>
+            <td style='border: 1px solid #ccc;'>${tension}</td>
+            <td style='border: 1px solid #ccc;'>${prompt}</td>

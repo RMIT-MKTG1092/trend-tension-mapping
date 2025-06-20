@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Trend Tension Mapping Worksheet</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      font-size: 10pt;
+      max-width: 1100px;
+    }
+    h1 {
+      font-size: 16pt;
+      color: #ba372a;
+    }
+    p {
+      font-size: 10pt;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      margin-bottom: 30px;
+      font-size: 10pt;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      vertical-align: top;
+    }
+    th {
+      background-color: #f6f6f6;
+      text-align: left;
+    }
+    textarea {
+      width: 100%;
+      height: 60px;
+      font-family: Arial, sans-serif;
+      font-size: 10pt;
+      box-sizing: border-box;
+    }
+    button {
+      background-color: #ba372a;
+      color: white;
+      padding: 10px 16px;
+      border: none;
+      font-size: 12pt;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Trend Tension Mapping Worksheet</h1>
+  <p><strong>Instructions:</strong> Use this worksheet to explore tensions between macro trends and changing expectations, behaviours, or constraints. These 'tensions' can highlight innovation opportunities.</p>
+
+  <form id="tensionForm">
+    <table>
+      <thead>
+        <tr>
+          <th>Trend Signal<br><span style="font-size:9pt; color: #666;">e.g. Smart appliances, cost-of-living</span></th>
+          <th>Tension or Friction<br><span style="font-size:9pt; color: #666;">e.g. Convenience vs. sustainability</span></th>
+          <th>Innovation Prompt<br><span style="font-size:9pt; color: #666;">What could be created or improved?</span></th>
+          <th>Notes or Source</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+        <tr>
+          <td><textarea name="trend1"></textarea></td>
+          <td><textarea name="tension1"></textarea></td>
+          <td><textarea name="prompt1"></textarea></td>
+          <td><textarea name="source1"></textarea></td>
+        </tr>
+
+        <tr>
+          <td><textarea name="trend2"></textarea></td>
+          <td><textarea name="tension2"></textarea></td>
+          <td><textarea name="prompt2"></textarea></td>
+          <td><textarea name="source2"></textarea></td>
+        </tr>
+
+        <tr>
+          <td><textarea name="trend3"></textarea></td>
+          <td><textarea name="tension3"></textarea></td>
+          <td><textarea name="prompt3"></textarea></td>
+          <td><textarea name="source3"></textarea></td>
+        </tr>
+
+        <tr>
+          <td><textarea name="trend4"></textarea></td>
+          <td><textarea name="tension4"></textarea></td>
+          <td><textarea name="prompt4"></textarea></td>
+          <td><textarea name="source4"></textarea></td>
+        </tr>
+
+        <tr>
+          <td><textarea name="trend5"></textarea></td>
+          <td><textarea name="tension5"></textarea></td>
+          <td><textarea name="prompt5"></textarea></td>
+          <td><textarea name="source5"></textarea></td>
+        </tr>
+      </tbody>
+    </table>
+    <button type="button" onclick="exportToWord()">Export to Word</button>
+  </form>
+
+  <script>
+    function exportToWord() {
+      const header = '<h2 style="font-family: Arial; font-size: 12pt;">Trend Tension Mapping Export</h2>';
+      let content = header;
+      content += `<table style='font-family: Arial; font-size: 10pt; width: 100%; border-collapse: collapse;' border='1'>
+                    <tr><th>Trend Signal</th><th>Tension</th><th>Innovation Prompt</th><th>Notes or Source</th></tr>`;
+
+      for (let i = 1; i <= 5; i++) {
+        const trend = document.querySelector(`[name='trend${i}']`).value;
+        const tension = document.querySelector(`[name='tension${i}']`).value;
+        const prompt = document.querySelector(`[name='prompt${i}']`).value;
+        const source = document.querySelector(`[name='source${i}']`).value;
+
+        if (trend || tension || prompt || source) {
+          content += `<tr><td>${trend}</td><td>${tension}</td><td>${prompt}</td><td>${source}</td></tr>`;
+        }
+      }
+
+      content += '</table>';
+
+      const html = `<!DOCTYPE html><html><head><meta charset='utf-8'></head><body>${content}</body></html>`;
+      const blob = new Blob([html], { type: 'application/msword' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'Trend_Tension_Mapping.doc';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    }
+  </script>
+</body>
+</html>

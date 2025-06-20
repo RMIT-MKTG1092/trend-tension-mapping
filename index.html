@@ -79,14 +79,14 @@
         </tr>
       </thead>
       <tbody>
-        
 <tr>
-  <td><textarea name="trend0" placeholder="e.g. Refill culture in household products" style="color: grey;" onfocus="clearPrompt(this)"></textarea></td>
-  <td><textarea name="tension0" placeholder="e.g. Sustainability vs. refill messiness" style="color: grey;" onfocus="clearPrompt(this)"></textarea></td>
-  <td><textarea name="prompt0" placeholder="e.g. Compact cartridge-based refill system" style="color: grey;" onfocus="clearPrompt(this)"></textarea></td>
-  <td><textarea name="notes0" placeholder="e.g. Links to convenience and eco design" style="color: grey;" onfocus="clearPrompt(this)"></textarea></td>
-  <td><textarea name="source0" placeholder="e.g. Deloitte (2025) Consumer Outlook" style="color: grey;" onfocus="clearPrompt(this)"></textarea></td>
+  <td><textarea name="trend0" placeholder="e.g. Refill culture in household products" onfocus="activateField(this)">e.g. Refill culture in household products</textarea></td>
+  <td><textarea name="tension0" placeholder="e.g. Sustainability vs. refill messiness" onfocus="activateField(this)">e.g. Sustainability vs. refill messiness</textarea></td>
+  <td><textarea name="prompt0" placeholder="e.g. Compact cartridge-based refill system" onfocus="activateField(this)">e.g. Compact cartridge-based refill system</textarea></td>
+  <td><textarea name="notes0" placeholder="e.g. Links to convenience and eco design" onfocus="activateField(this)">e.g. Links to convenience and eco design</textarea></td>
+  <td><textarea name="source0" placeholder="e.g. Deloitte (2025) Consumer Outlook" onfocus="activateField(this)">e.g. Deloitte (2025) Consumer Outlook</textarea></td>
 </tr>
+
 
         <tr>
       <td><textarea name="trend1"></textarea></td>
@@ -143,6 +143,14 @@
   </form>
 
   <script>
+    
+    function activateField(field) {
+      if (field.value.startsWith('e.g.')) {
+        field.value = '';
+      }
+      field.style.color = 'black';
+    }
+
     function clearPrompt(field) {
       if (field.value.startsWith('e.g.')) {
         field.value = '';

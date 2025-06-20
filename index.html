@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -129,3 +131,24 @@
             <td style='border: 1px solid #ccc;'>${trend}</td>
             <td style='border: 1px solid #ccc;'>${tension}</td>
             <td style='border: 1px solid #ccc;'>${prompt}</td>
+            <td style='border: 1px solid #ccc;'>${notes}</td>
+            <td style='border: 1px solid #ccc;'>${source}</td>
+          </tr>`;
+        }
+      }
+
+      content += '</table>';
+
+      const html = `<!DOCTYPE html><html><head><meta charset='utf-8'></head><body>${content}</body></html>`;
+      const blob = new Blob([html], { type: 'application/msword' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'Trend_Tension_Mapping.doc';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    }
+  </script>
+</body>
+</html>

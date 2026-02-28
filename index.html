@@ -1,30 +1,42 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Trend Tension Mapping Worksheet</title>
+  <title>Trend, Tension and Opportunity Worksheet</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 40px;
       font-size: 10pt;
       max-width: 1100px;
+      color: #222;
     }
     h1 {
       font-size: 16pt;
       color: #ba372a;
+      margin-bottom: 8px;
     }
-    p {
-      font-size: 10pt;
+    p { font-size: 10pt; margin: 8px 0; }
+    ul { margin: 8px 0 14px 18px; }
+    li { margin: 4px 0; }
+    .note-box{
+      background:#f6f6f6;
+      border:1px solid #ddd;
+      border-radius:8px;
+      padding:12px 14px;
+      margin: 12px 0 16px 0;
+    }
+    .smallnote{
+      font-size: 9.5pt;
+      color:#555;
+      margin-top:6px;
     }
     table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 20px;
-      margin-bottom: 30px;
+      margin-top: 16px;
+      margin-bottom: 18px;
       font-size: 10pt;
     }
     th, td {
@@ -39,7 +51,7 @@
     }
     textarea {
       width: 100%;
-      height: 60px;
+      height: 64px;
       font-family: Arial, sans-serif;
       font-size: 10pt;
       box-sizing: border-box;
@@ -52,123 +64,145 @@
       border: none;
       font-size: 12pt;
       cursor: pointer;
+      border-radius: 4px;
     }
+    button:hover { background-color: #9e2f23; }
   </style>
 </head>
 <body>
-  <h1>Trend Tension Mapping Worksheet</h1>
-  <p><strong>Instructions:</strong> Use this worksheet to explore <em>tensions</em> between macro-environmental trends and changing consumer expectations, behaviours, or business constraints. These tensions often point to areas where innovation is most needed.</p>
-  <p>A <strong>tension</strong> is where two forces pull in different directions — for example, customers want sustainable packaging, but also want something convenient and mess-free.</p>
-  <p><strong>How to use this:</strong></p>
+  <h1>Trend, tension and opportunity worksheet</h1>
+
+  <div class="note-box">
+    <p><strong>What this worksheet helps you do</strong></p>
+    <p>
+      You will take a trend (a change in the world) and turn it into a clear opportunity for innovation.
+      The key step is finding the <strong>tension</strong>.
+    </p>
+    <p class="smallnote">
+      A tension is a clash. People want something, but something gets in the way.
+      The “gets in the way” part is often time, money, trust, effort, confusion, or access.
+    </p>
+  </div>
+
+  <p><strong>How to use this</strong></p>
   <ul>
-    <li>Start by identifying a <strong>trend</strong> that is active or emerging (e.g. refill packaging, automation, skin sensitivity)</li>
-    <li>Describe the <strong>tension</strong> or clash it creates in real life</li>
-    <li>Suggest an <strong>innovation idea</strong> that could resolve or respond to this tension</li>
-    <li>Include a <strong>source</strong> to support your trend insight</li>
+    <li>Start with one strong <strong>trend signal</strong> from your PESTLE work.</li>
+    <li>Write the <strong>tension</strong> in one clear sentence (people want… but…).</li>
+    <li>Write an <strong>innovation prompt</strong> (a direction, not a final product).</li>
+    <li>Add a short note about what you would test first.</li>
+    <li>Add a <strong>source</strong> to prove the trend is real.</li>
   </ul>
+
+  <div class="note-box">
+    <p><strong>Example (structure only)</strong></p>
+    <p class="smallnote" style="margin-bottom:0;">
+      Trend signal: More people want solutions that are easy to use at home.<br>
+      Tension: People want help quickly, but they do not want extra cost or hassle.<br>
+      Innovation prompt: How might we make it easy to get support at home without wasting time or money?
+    </p>
+  </div>
 
   <form id="tensionForm">
     <table>
       <thead>
         <tr>
-          <th>Trend Signal</th>
+          <th>Trend signal</th>
           <th>Tension</th>
-          <th>Innovation Prompt</th>
+          <th>Innovation prompt</th>
           <th>Notes</th>
           <th>Source</th>
         </tr>
       </thead>
       <tbody>
-<tr>
-  <td><textarea name="trend0" placeholder="e.g. Refill culture in household products" onfocus="activateField(this)">e.g. Refill culture in household products</textarea></td>
-  <td><textarea name="tension0" placeholder="e.g. Sustainability vs. refill messiness" onfocus="activateField(this)">e.g. Sustainability vs. refill messiness</textarea></td>
-  <td><textarea name="prompt0" placeholder="e.g. Compact cartridge-based refill system" onfocus="activateField(this)">e.g. Compact cartridge-based refill system</textarea></td>
-  <td><textarea name="notes0" placeholder="e.g. Links to convenience and eco design" onfocus="activateField(this)">e.g. Links to convenience and eco design</textarea></td>
-  <td><textarea name="source0" placeholder="e.g. Deloitte (2025) Consumer Outlook" onfocus="activateField(this)">e.g. Deloitte (2025) Consumer Outlook</textarea></td>
-</tr>
-
 
         <tr>
-      <td><textarea name="trend1"></textarea></td>
-      <td><textarea name="tension1"></textarea></td>
-      <td><textarea name="prompt1"></textarea></td>
-      <td><textarea name="notes1"></textarea></td>
-      <td><textarea name="source1"></textarea></td>
-    </tr>
-<tr>
-      <td><textarea name="trend2"></textarea></td>
-      <td><textarea name="tension2"></textarea></td>
-      <td><textarea name="prompt2"></textarea></td>
-      <td><textarea name="notes2"></textarea></td>
-      <td><textarea name="source2"></textarea></td>
-    </tr>
-<tr>
-      <td><textarea name="trend3"></textarea></td>
-      <td><textarea name="tension3"></textarea></td>
-      <td><textarea name="prompt3"></textarea></td>
-      <td><textarea name="notes3"></textarea></td>
-      <td><textarea name="source3"></textarea></td>
-    </tr>
-<tr>
-      <td><textarea name="trend4"></textarea></td>
-      <td><textarea name="tension4"></textarea></td>
-      <td><textarea name="prompt4"></textarea></td>
-      <td><textarea name="notes4"></textarea></td>
-      <td><textarea name="source4"></textarea></td>
-    </tr>
-<tr>
-      <td><textarea name="trend5"></textarea></td>
-      <td><textarea name="tension5"></textarea></td>
-      <td><textarea name="prompt5"></textarea></td>
-      <td><textarea name="notes5"></textarea></td>
-      <td><textarea name="source5"></textarea></td>
-    </tr>
-<tr>
-      <td><textarea name="trend6"></textarea></td>
-      <td><textarea name="tension6"></textarea></td>
-      <td><textarea name="prompt6"></textarea></td>
-      <td><textarea name="notes6"></textarea></td>
-      <td><textarea name="source6"></textarea></td>
-    </tr>
-<tr>
-      <td><textarea name="trend7"></textarea></td>
-      <td><textarea name="tension7"></textarea></td>
-      <td><textarea name="prompt7"></textarea></td>
-      <td><textarea name="notes7"></textarea></td>
-      <td><textarea name="source7"></textarea></td>
-    </tr>
+          <td><textarea name="trend0" placeholder="Example: Pet owners want easy ways to keep pets busy at home" onfocus="activateField(this)">Example: Pet owners want easy ways to keep pets busy at home</textarea></td>
+          <td><textarea name="tension0" placeholder="Example: Owners want pets entertained, but toys are expensive and pets get bored quickly" onfocus="activateField(this)">Example: Owners want pets entertained, but toys are expensive and pets get bored quickly</textarea></td>
+          <td><textarea name="prompt0" placeholder="Example: How might we help owners keep pets busy without wasting money on the wrong toys?" onfocus="activateField(this)">Example: How might we help owners keep pets busy without wasting money on the wrong toys?</textarea></td>
+          <td><textarea name="notes0" placeholder="Example: What would you test first? Price, cleaning, returns, trust" onfocus="activateField(this)">Example: What would you test first? Price, cleaning, returns, trust</textarea></td>
+          <td><textarea name="source0" placeholder="Paste a link or citation (report, news, industry source)" onfocus="activateField(this)">Paste a link or citation (report, news, industry source)</textarea></td>
+        </tr>
+
+        <tr>
+          <td><textarea name="trend1" placeholder="Trend signal" onfocus="activateField(this)"></textarea></td>
+          <td><textarea name="tension1" placeholder="People want… but… gets in the way" onfocus="activateField(this)"></textarea></td>
+          <td><textarea name="prompt1" placeholder="How might we… (keep it broad)" onfocus="activateField(this)"></textarea></td>
+          <td><textarea name="notes1" placeholder="What would you test first?" onfocus="activateField(this)"></textarea></td>
+          <td><textarea name="source1" placeholder="Paste source link or citation" onfocus="activateField(this)"></textarea></td>
+        </tr>
+
+        <tr>
+          <td><textarea name="trend2" placeholder="Trend signal" onfocus="activateField(this)"></textarea></td>
+          <td><textarea name="tension2" placeholder="People want… but… gets in the way" onfocus="activateField(this)"></textarea></td>
+          <td><textarea name="prompt2" placeholder="How might we… (keep it broad)" onfocus="activateField(this)"></textarea></td>
+          <td><textarea name="notes2" placeholder="What would you test first?" onfocus="activateField(this)"></textarea></td>
+          <td><textarea name="source2" placeholder="Paste source link or citation" onfocus="activateField(this)"></textarea></td>
+        </tr>
+
+        <tr>
+          <td><textarea name="trend3" placeholder="Trend signal" onfocus="activateField(this)"></textarea></td>
+          <td><textarea name="tension3" placeholder="People want… but… gets in the way" onfocus="activateField(this)"></textarea></td>
+          <td><textarea name="prompt3" placeholder="How might we… (keep it broad)" onfocus="activateField(this)"></textarea></td>
+          <td><textarea name="notes3" placeholder="What would you test first?" onfocus="activateField(this)"></textarea></td>
+          <td><textarea name="source3" placeholder="Paste source link or citation" onfocus="activateField(this)"></textarea></td>
+        </tr>
+
+        <tr>
+          <td><textarea name="trend4" placeholder="Trend signal" onfocus="activateField(this)"></textarea></td>
+          <td><textarea name="tension4" placeholder="People want… but… gets in the way" onfocus="activateField(this)"></textarea></td>
+          <td><textarea name="prompt4" placeholder="How might we… (keep it broad)" onfocus="activateField(this)"></textarea></td>
+          <td><textarea name="notes4" placeholder="What would you test first?" onfocus="activateField(this)"></textarea></td>
+          <td><textarea name="source4" placeholder="Paste source link or citation" onfocus="activateField(this)"></textarea></td>
+        </tr>
+
+        <tr>
+          <td><textarea name="trend5" placeholder="Trend signal" onfocus="activateField(this)"></textarea></td>
+          <td><textarea name="tension5" placeholder="People want… but… gets in the way" onfocus="activateField(this)"></textarea></td>
+          <td><textarea name="prompt5" placeholder="How might we… (keep it broad)" onfocus="activateField(this)"></textarea></td>
+          <td><textarea name="notes5" placeholder="What would you test first?" onfocus="activateField(this)"></textarea></td>
+          <td><textarea name="source5" placeholder="Paste source link or citation" onfocus="activateField(this)"></textarea></td>
+        </tr>
+
+        <tr>
+          <td><textarea name="trend6" placeholder="Trend signal" onfocus="activateField(this)"></textarea></td>
+          <td><textarea name="tension6" placeholder="People want… but… gets in the way" onfocus="activateField(this)"></textarea></td>
+          <td><textarea name="prompt6" placeholder="How might we… (keep it broad)" onfocus="activateField(this)"></textarea></td>
+          <td><textarea name="notes6" placeholder="What would you test first?" onfocus="activateField(this)"></textarea></td>
+          <td><textarea name="source6" placeholder="Paste source link or citation" onfocus="activateField(this)"></textarea></td>
+        </tr>
+
+        <tr>
+          <td><textarea name="trend7" placeholder="Trend signal" onfocus="activateField(this)"></textarea></td>
+          <td><textarea name="tension7" placeholder="People want… but… gets in the way" onfocus="activateField(this)"></textarea></td>
+          <td><textarea name="prompt7" placeholder="How might we… (keep it broad)" onfocus="activateField(this)"></textarea></td>
+          <td><textarea name="notes7" placeholder="What would you test first?" onfocus="activateField(this)"></textarea></td>
+          <td><textarea name="source7" placeholder="Paste source link or citation" onfocus="activateField(this)"></textarea></td>
+        </tr>
+
       </tbody>
     </table>
     <button type="button" onclick="exportToWord()">Export to Word</button>
   </form>
 
   <script>
-    
     function activateField(field) {
-      if (field.value.startsWith('e.g.')) {
+      if (field.value && field.value.startsWith('Example:')) {
         field.value = '';
       }
       field.style.color = 'black';
     }
 
-    function clearPrompt(field) {
-      if (field.value.startsWith('e.g.')) {
-        field.value = '';
-        field.style.color = 'black';
-      }
-    }
-
     function exportToWord() {
-      const header = '<h2 style="font-family: Arial; font-size: 14pt; color: #ba372a;">Trend Tension Mapping Export</h2>';
+      const header = '<h2 style="font-family: Arial; font-size: 14pt; color: #ba372a;">Trend, tension and opportunity export</h2>';
       let content = header;
       content += `<table style='font-family: Arial; font-size: 10pt; width: 100%; border-collapse: collapse; border: 1px solid #999;'>
                     <tr style='background-color: #003865; color: white; font-weight: bold;'>
-                      <th style='border: 1px solid #ccc;'>Trend Signal</th>
+                      <th style='border: 1px solid #ccc;'>Trend signal</th>
                       <th style='border: 1px solid #ccc;'>Tension</th>
-                      <th style='border: 1px solid #ccc;'>Innovation Prompt</th>
+                      <th style='border: 1px solid #ccc;'>Innovation prompt</th>
                       <th style='border: 1px solid #ccc;'>Notes</th>
                       <th style='border: 1px solid #ccc;'>Source</th>
-                    </tr>`;  
+                    </tr>`;
 
       for (let i = 0; i <= 7; i++) {
         const trend = document.querySelector(`[name='trend${i}']`)?.value || '';
@@ -195,7 +229,7 @@
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a');
       a.href = url;
-      a.download = 'Trend_Tension_Mapping.doc';
+      a.download = 'Trend_Tension_Opportunity.doc';
       a.click();
       URL.revokeObjectURL(url);
     }
